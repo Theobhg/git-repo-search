@@ -17,11 +17,13 @@ import {
   Bio,
   ProfileButton,
   ProfileButtonText,
+  RemoveButton,
+  RemoveButtonText,
 } from './styles';
 
 export default class Main extends Component {
   static navigationOptions = {
-    title: 'Usuarios',
+    title: 'Users',
   };
 
   static PropTypes = {
@@ -82,6 +84,14 @@ export default class Main extends Component {
     navigation.navigate('User', { user });
   };
 
+  handleRemove = user => {
+    const { users } = this.state;
+
+    const removeUser = users.filter(r => r.login !== user.login);
+
+    this.setState({ users: removeUser });
+  };
+
   render() {
     const { users, newUser, loading } = this.state;
 
@@ -91,7 +101,7 @@ export default class Main extends Component {
           <Input
             autoCorrect={false}
             autoCaptalize="none"
-            placeholder="Adicionar usuario"
+            placeholder="Add user"
             value={newUser}
             onChangeText={(text) => this.setState({ newUser: text })}
             returnKeyType="send"
@@ -116,8 +126,12 @@ export default class Main extends Component {
               <Bio>{item.bio}</Bio>
 
               <ProfileButton onPress={() => this.handleNavigate(item)}>
-                <ProfileButtonText>Ver Perfil</ProfileButtonText>
+                <ProfileButtonText>View profile</ProfileButtonText>
               </ProfileButton>
+
+              <RemoveButton onPress={() => this.handleRemove(item)}>
+                <RemoveButtonText>Remove</RemoveButtonText>
+              </RemoveButton>
             </User>
           )}
         />
