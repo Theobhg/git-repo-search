@@ -27,7 +27,7 @@ export const Input = styled.TextInput.attrs({
 export const SubmitButton = styled(RectButton)`
   justify-content: center;
   align-items: center;
-  background: #084d6e;
+  background: #258c3e;
   border-radius: 4px;
   margin-left: 10px;
   padding: 0 12px;
@@ -43,7 +43,7 @@ export const List = styled.FlatList.attrs({
 export const User = styled.View`
   align-items: center;
   margin: 10px 0px 30px;
-  background: #eee;
+  background: #fafbfc;
   padding: 30px 30px;
   border-radius: 8px;
 `;
@@ -77,7 +77,7 @@ export const ProfileButton = styled(RectButton)`
   margin-top: 16px;
   align-self: stretch;
   border-radius: 4px;
-  background: #084d6e;
+  background: #258c3e;
   justify-content: center;
   align-items: center;
   height: 36px;
@@ -94,15 +94,17 @@ export const RemoveButton = styled(RectButton)`
   margin-top: 16px;
   align-self: stretch;
   border-radius: 4px;
-  background: #084d6e;
+  background: #f8f9fa ;
+  border: 1px solid #666;
   justify-content: center;
   align-items: center;
   height: 36px;
+
 `;
 
 export const RemoveButtonText = styled.Text`
   font-size: 14px;
   font-weight: bold;
-  color: #fff;
+  color: #212121;
   text-transform: uppercase;
 `;
